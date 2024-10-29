@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>烟雨江南</title>
+</head>
+<body>
+  <!-- 头部 -->
+  <div class="nav">
+    <div class="logo">
+     烟 雨 江 南
+    </div>
+    <div class="navright">
+     <ul>
+       <li ><a href="index.html">主页</a></li>
+       <li class="borderbox"><a href="delicacies.html">美食</a></li>
+       <li><a href="tourism.html">旅游</a></li>
+       <li><a href="login.html">登录</a></li>
+       <li><a href="enroll.html">注册</a></li>
+       <li><a href="Aboutwebsite.html">关于网站</a></li>
+     </ul>
+    </div>
+    <div class="navtitle">
+      美食
+    </div>
+    <div class="positioning">
+      主页 > 美食 
+    </div>
+   </div>
+<!-- 内容 -->
+  <div class="bannertitle">
+    美食分享
+  </div>
+  <div class="bannerswiper">
+    <!-- 图片展示 -->
+    <div class="all">
+      <div style="background-image: url(/images/foods/3.jpg);">
+          <span></span><img src="/images/foods/3.jpg"/>
+      </div>
+      <div  style="background-image: url(/images/foods/1.jpg);">
+          <span></span><img src="/images/foods/1.jpg"/>
+      </div>
+      <div  style="background-image: url(/images/foods/2.jpg);">
+          <span></span><img src="/images/foods/2.jpg"/>
+      </div>
+      <div data-index="3" style="background-image: url(/images/foods/0.jpg);">
+          <span></span><img src="/images/foods/0.jpg"/>
+      </div>
+      <div  style="background-image: url(/images/foods/4.jpg);">
+          <span></span><img src="/images/foods/4.jpg"/>
+      </div>
+      <div  style="background-image: url(/images/foods/5.jpg);">
+          <span></span><img src="/images/foods/5.jpg"/>
+      </div>
+      <div  style="background-image: url(/images/foods/6.jpg);">
+          <span></span><img src="/images/foods/6.jpg"/>
+      </div>
+    </div>
+  </div>
+<!-- 美食推荐 -->
+<div class="foodrecommend">
+  <div class="recommend">
+    美食推荐
+</div>
+<div class="recommedimg">
+  <ul>
+    <li>
+      <div class="topimg">
+        <img src="/images/foods/ydx.webp" alt="">
+      </div>
+      <div class="bottomtext">腌笃鲜</div>
+    </li>
+    <li>
+      <div class="topimg">
+        <img src="/images/foods/ljxr.webp" alt="">
+      </div>
+      <div class="bottomtext">龙井虾仁</div>
+    </li>
+    <li>
+      <div class="topimg">
+        <img src="/images/foods/cbh.webp" alt="">
+      </div>
+      <div class="bottomtext">葱包烩</div>
+    </li>
+    <li>
+      <div class="topimg">
+        <img src="/images/foods/dpr.webp" alt="">
+      </div>
+      <div class="bottomtext">东坡肉</div>
+    </li>
+    <li>
+      <div class="topimg">
+        <img src="/images/foods/acqt.webp" alt="">
+      </div>
+      <div class="bottomtext">艾草青团</div>
+    </li>
+    <li>
+      <div class="topimg">
+        <img src="/images/foods/ghg.webp" alt="">
+      </div>
+      <div class="bottomtext">桂花糕</div>
+    </li>
+    <li>
+      <div class="topimg">
+        <img src="/images/foods/thcd.webp" alt="">
+      </div>
+      <div class="bottomtext">太湖船点</div>
+    </li>
+    <li>
+      <div class="topimg">
+        <img src="/images/foods/azm.webp" alt="">
+      </div>
+      <div class="bottomtext">奥灶面</div>
+    </li>
+  </ul>
+</div>
+
+
+</div>
+
+<!-- 底部 -->
+<div class="foot">
+  <div class="footlogo">
+    烟 雨 江 南
+   </div>
+   <div class="nickname">
+    “我本无意入江南，奈何江南入我心”
+  </div>
+  <div class="Companyaddress">
+    公司地址：烟雨江南
+  </div>
+  <div class="Customerservicehotline">
+    客服热线：+ 010 854 6578  
+  </div>
+  <div class="OfficialWeibo">
+    官方微博：烟雨江南
+  </div>
+  <div class="WeChatpublicaccount">
+    微信公众号：烟雨江南
+  </div>
+</div>
+
+</body>
+<script src="/js/jquery-3.7.1.js"></script>
+<script>
+   //导航下划线
+   $lis = $('.navright ul li')
+      $lis.hover(function() {
+        $(this).addClass('borderbox'); // 添加样式类
+        $(this).siblings().removeClass('borderbox'); // 移除兄弟元素的样式类
+      }, function() {
+        $(this).removeClass('borderbox'); // 移除样式类
+      });
+      
+    //鼠标离开头部显示导航下划线
+   //鼠标触摸头部显示透明色
+   $nav=$('.nav')
+      $nav.hover(function() {
+      }, function() {
+         $lis.eq(1).addClass('borderbox')
+      });
+//轮播图逻辑
+
+//图片展示逻辑
+// 只需要变化图片的高以及div的宽即可。
+$(function () {
+    // 设置初始图片的宽高
+    setWAndH($(".all>div:nth-of-type(4)").attr("data-index"));
+    // 当图片被点击时触发事件
+    $(".all>div").on("click", function () {
+        // 设置对应索引的图片宽高
+        setWAndH($(this).attr("data-index"));
+    });
+
+    // 定义设置图片和div宽高的函数
+    function setWAndH(indexTemp) {
+        // 遍历所有图片展示区域的div
+        $(".all>div").each(function (index) {
+            // 如果当前div没有data-index属性，则为其设置默认值
+            if (!$(this).attr("data-index")) {
+                $(this).attr("data-index", index);
+            }
+            // 初始化左边距值
+            var leftTemp = 0;
+            // 根据传入的索引值设置当前div的宽高和位置
+            if (indexTemp == index) {
+                // 计算左边距
+                leftTemp = index * 60;
+                // 设置当前div的宽高和位置，并使用动画效果
+                $(this).stop(false, true).animate({
+                    width: 800,
+                    height: 500 - Math.abs(indexTemp - index) * 22,
+                    left: leftTemp
+                }).children("img").stop(false, true).animate({
+                    height: "100%",
+                    opacity: 1,
+                    top: 0
+                }, 300);
+            } else {
+                // 计算左边距
+                if (index > indexTemp) {
+                    leftTemp = (index - 1) * 60 + 800;
+                } else {
+                    leftTemp = index * 60;
+                }
+                // 设置当前div的宽高和位置，并使用动画效果
+                $(this).stop(false, true).animate({
+                    width: 60,
+                    height: 500 - Math.abs(indexTemp - index) * 32,
+                    left: leftTemp
+                }).children("img").stop(false, true).animate({
+                    height: 0,
+                    opacity: 0,
+                    top: "50%"
+                }, 300);
+            }
+            // 设置高度
+        });
+    }
+});
+</script>
+<style>
+  .nav{
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-color: rgb(159, 10, 14);
+  }
+  .logo{
+    width: 130px;
+    height: 80px;
+    /* background-color: rgb(8, 84, 84); */
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 80px;
+    margin-left: 30px;
+    color: white;
+    float: left;
+  }
+  .navright{
+    float: right;
+    width: 600px;
+    height: 80px;
+    /* background-color: yellow; */
+    margin-right: 10px;
+  }
+  .navright ul li{
+    list-style: none;
+    float: left;
+    margin-right: 10px;
+    line-height: 45px;
+    font-weight: bold;
+    font-size: 16px;
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    text-align: center;
+    /* background-color: aquamarine; */
+    
+  }
+  .navright ul li a{
+      color: white;
+      text-decoration: none;
+  }
+  .borderbox{
+    border-bottom: 1px solid white;
+  }  
+.navtitle{
+  width: 80px;
+  height: 40px;
+  /* background-color: blue; */
+  font-weight: bold;
+  text-align: center;
+  margin-left: 50px;
+  line-height: 40px;
+  font-size: 18px;
+  color: white;
+  position: absolute;
+  top: 130px;
+}
+.positioning{
+  width: 80px;
+  height: 40px;
+  /* background-color: blue; */
+  font-weight: bold;
+  text-align: center;
+  margin-left: 50px;
+  line-height: 40px;
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  top: 180px;
+}
+.bannertitle{
+  margin-top: 50px;
+  width: 280px;
+  height: 40px;
+  /* background-color: blue; */
+  font-weight: bold;
+  text-align: center;
+  margin-left: 50px;
+  line-height: 40px;
+  font-size: 20px;
+  color: black;
+}
+.bannerswiper{
+  /* margin-top: 20px; */
+  width: 1520px;
+  height: 500px;
+  /* background-color: aqua; */
+}
+/* 图片展示 */
+.all {
+            position: relative;
+            line-height: 424px;
+            width: 1000px;
+            height: 424px;
+            margin-top: 100px;
+            margin-left: 200px;
+            margin-right: 200px;
+            /* background-color: yellow; */
+        }
+
+        .all > div {
+            position: absolute;
+            border: 1px solid silver;
+            background: #ebffc6;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .all>div>span{
+            position: absolute;
+            display: inline-block;
+            width: 100%;;
+            text-align: center;
+        }
+        img {
+            position: absolute;
+            width: 100%;
+            height: 0;
+            top: 50%;
+        }
+
+/* 美食推荐 */
+
+.foodrecommend{
+  position: relative;
+width:1200px;
+height: 650px;
+margin: 20px auto;
+/* background-color: tomato; */
+}
+.recommend{
+  position: absolute;
+  clear: both;
+ left: 420px;
+  width: 280px;
+  height: 40px;
+  /* background-color: blue; */
+  font-weight: bold;
+  text-align: center;
+  margin-left: 50px;
+  line-height: 40px;
+  font-size: 20px;
+  color: black;
+}
+.recommedimg{
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  height: 580px;
+  /* background-color: aquamarine; */
+}
+.recommedimg ul li{
+  list-style: none;
+  width: 270px;
+  height: 250px;
+  /* background-color: blue; */
+  float: left;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+.topimg{
+  width: 100%;
+  height: 200px;
+  /* background-color: tomato; */
+}
+.topimg img{
+  width: 100%;
+  height: 100%;
+  position: inherit;
+}
+.bottomtext{
+  width: 100%;
+  height: 50px;
+  /* background-color: thistle; */
+  text-align: center;
+  font-weight: bold;
+  line-height: 50px;
+}
+
+/* 底部 */
+.foot{
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background-color: black;
+}
+.footlogo{
+  position: absolute;
+  left: 200px;
+  width: 130px;
+    height: 80px;
+    /* background-color: rgb(8, 84, 84); */
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 80px;
+    /* margin-left: 30px; */
+    color: white;
+    float: left;
+}
+.nickname{
+  position: absolute;
+  top: 100px;
+  left: 190px;
+    width: 310px;
+    height:30px;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    /* background-color: aquamarine; */
+  }
+  .Companyaddress{
+    position: absolute;
+  top: 50px;
+  left: 600px;
+    width: 310px;
+    height:30px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    /* background-color: aquamarine; */
+  }
+  .Customerservicehotline{
+    position: absolute;
+    top: 100px;
+    left: 600px;
+    width: 310px;
+    height:30px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    /* background-color: aquamarine; */
+  }
+  .OfficialWeibo{
+    position: absolute;
+    top: 100px;
+    left: 1000px;
+    width: 310px;
+    height:30px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    /* background-color: aquamarine; */
+  }
+  .WeChatpublicaccount{
+    position: absolute;
+  top: 50px;
+  left: 1000px;
+    width: 310px;
+    height:30px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    /* background-color: aquamarine; */
+  }
+</style>
+</html>

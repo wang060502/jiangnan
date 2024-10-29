@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>烟雨江南</title>
+<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="top-image">
+  <!-- 头部 -->
+    <div class="nav">
+     <div class="logo">
+      烟 雨 江 南
+     </div>
+     <div class="navright">
+      <ul>
+        <li class="borderbox"><a href="index.html">主页</a></li>
+        <li><a href="delicacies.html">美食</a></li>
+        <li><a href="tourism.html">旅游</a></li>
+        <li><a href="login.html">登录</a></li>
+        
+        <li><a href="enroll.html">注册</a></li>
+        <li><a href="Aboutwebsite.html">关于网站</a></li>
+      </ul>
+     </div>
+    </div>
+<!-- 内容 -->
+<div class="banner">
+<div class="nickname">
+  “小巷深深梦徽州，白墙黛瓦见江南”
+</div>
+<div class="name">
+  这 里 是 江 南
+</div>
+<div class="welecome">
+  Welcome to Gangnam
+</div>
+<div class="login" data-url="login.html">
+  登录
+</div>
+<div class="enroll" data-url="enroll.html">
+  注册
+</div>
+</div>
+
+  </div>
+</div>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="js/ios-parallax.js"></script> 
+<script type="text/javascript">
+	    $(document).ready(function() {
+	      $('#top-image').iosParallax({
+	        movementFactor: 50
+	      });
+	    });
+      
+      //导航下划线
+      $lis=$('.navright ul li')
+      $lis.hover(function() {
+        $(this).addClass('borderbox'); // 添加样式类
+        $(this).siblings().removeClass('borderbox'); // 移除兄弟元素的样式类
+      }, function() {
+        $(this).removeClass('borderbox'); // 移除样式类
+      });
+
+      //鼠标触摸头部显示透明色
+      $nav=$('.nav')
+      $nav.hover(function() {
+        $(this).addClass('bgc'); // 添加样式类
+      }, function() {
+        $(this).removeClass('bgc'); // 移除样式类
+         $lis.eq(0).addClass('borderbox')
+      });
+
+      //按钮触摸变色
+      $enroll =$('.enroll')
+      $enroll.hover(function(){
+        $(this).addClass('hoverbtn')
+      },function(){
+        $(this).removeClass('hoverbtn')
+      })
+
+      //点击按钮体跳转至登录页
+      $login = $('.login')
+      $login.click(function(){
+        var url = $(this).data('url');
+        // 使用 JavaScript 跳转到指定页面
+        window.location.href = url;
+      })
+
+       //点击按钮体跳转至注册页
+       $enroll = $('.enroll')
+      $enroll.click(function(){
+        var url = $(this).data('url');
+        // 使用 JavaScript 跳转到指定页面
+        window.location.href = url;
+      })
+	  </script>
+</body>
+<style>
+  .nav{
+    width: 100%;
+    height: 80px;
+  }
+  .bgc{
+    background-color: rgb(0,0,0,0.2);
+  }
+  .logo{
+    width: 130px;
+    height: 100%;
+    /* background-color: rgb(8, 84, 84); */
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 80px;
+    margin-left: 30px;
+    color: white;
+    float: left;
+  }
+  .navright{
+    float: right;
+    width: 600px;
+    height: 100%;
+    /* background-color: yellow; */
+    margin-right: 10px;
+  }
+  .navright ul li{
+    list-style: none;
+    float: left;
+    margin-right: 10px;
+    line-height: 45px;
+    font-weight: bold;
+    font-size: 16px;
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    text-align: center;
+    /* background-color: aquamarine; */
+    
+  }
+  .navright ul li a{
+      color: white;
+      text-decoration: none;
+  }
+  .borderbox{
+    border-bottom: 1px solid white;
+  }  
+
+  .banner{
+    margin-left: 60px;
+    width: 500px;
+    height: 400px;
+    /* background-color: blueviolet; */
+    margin-top: 180px;
+  }
+  .nickname{
+    width: 500px;
+    text-align: center;
+    height:50px;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    /* background-color: aquamarine; */
+  }
+  .name{
+    margin-left: 55px;
+    width: 250px;
+    height:50px;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 40px;
+    color: white;
+    /* background-color: rgb(5, 83, 179); */
+  }
+  .welecome{
+    margin-left: 55px;
+    width: 250px;
+    height:50px;
+    line-height: 50px;
+    color: white;
+    /* background-color: rgb(145, 6, 148); */
+  }
+  .login{
+    margin-left: 55px;
+    margin-top: 40px;
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    font-weight: bold;
+    color: rgb(108, 110, 146);
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    float: left;
+  }
+  .enroll{
+    margin-left: 10px;
+    margin-top: 40px;
+    width: 150px;
+    height: 40px;
+    background-color: rgb(0,0,0,0.2);
+    font-weight: bold;
+    color:white;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    border:1px solid white
+  }
+  .hoverbtn{
+    background-color: white;
+    color: rgb(108, 110, 146);
+  }
+</style>
+</html>

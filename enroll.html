@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>烟雨江南</title>
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="nav">
+      <div class="logo">
+       烟 雨 江 南
+      </div>
+      <div class="navright">
+       <ul>
+         <li ><a href="index.html">主页</a></li>
+         <li><a href="delicacies.html">美食</a></li>
+         <li><a href="tourism.html">旅游</a></li>
+         <li  ><a href="login.html">登录</a></li>
+         <li class="borderbox"><a href="enroll.html">注册</a></li>
+         <li><a href="Aboutwebsite.html">关于网站</a></li>
+       </ul>
+      </div>
+      <div class="navtitle">
+        注册
+      </div>
+      <div class="positioning">
+        主页 > 注册 
+      </div>
+     </div>
+
+     <div class="banner">
+      <div class="auto">
+        <div class="logintext">
+          注 册
+        </div>
+        <div class="loginfrom">
+          <div class="loginname">用 户 名 / 手 机 号</div>
+          <input type="text" class="username" placeholder="">
+          <div class="loginname">密码</div>
+          <input type="password" class="username" placeholder="">
+          <div class="loginname">再次输入密码</div>
+          <input type="password" class="username" placeholder="">
+          <div class="submit">注 册</div>
+
+          <div class="gologin">
+            已有账号 去<a href="login.html">登录</a>
+          </div>
+        </div>
+      </div>
+     </div>
+<!-- 底部 -->
+<div class="foot">
+  <div class="footlogo">
+    烟 雨 江 南
+   </div>
+   <div class="nickname">
+    “我本无意入江南，奈何江南入我心”
+  </div>
+  <div class="Companyaddress">
+    公司地址：烟雨江南
+  </div>
+  <div class="Customerservicehotline">
+    客服热线：+ 010 854 6578  
+  </div>
+  <div class="OfficialWeibo">
+    官方微博：烟雨江南
+  </div>
+  <div class="WeChatpublicaccount">
+    微信公众号：烟雨江南
+  </div>
+</div>
+</body>
+<script src="/js/jquery-3.7.1.js"></script>
+<script>
+  //导航下划线
+  $lis = $('.navright ul li')
+      $lis.hover(function() {
+        $(this).addClass('borderbox'); // 添加样式类
+        $(this).siblings().removeClass('borderbox'); // 移除兄弟元素的样式类
+      }, function() {
+        $(this).removeClass('borderbox'); // 移除样式类
+      });
+      
+    //鼠标离开头部显示导航下划线
+   //鼠标触摸头部显示透明色
+   $nav=$('.nav')
+      $nav.hover(function() {
+      }, function() {
+         $lis.eq(4).addClass('borderbox')
+      });
+</script>
+<style>
+   .nav{
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-color: rgb(159, 10, 14);
+  }
+  .logo{
+    width: 130px;
+    height: 80px;
+    /* background-color: rgb(8, 84, 84); */
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 80px;
+    margin-left: 30px;
+    color: white;
+    float: left;
+  }
+  .navright{
+    float: right;
+    width: 600px;
+    height: 80px;
+    /* background-color: yellow; */
+    margin-right: 10px;
+  }
+  .navright ul li{
+    list-style: none;
+    float: left;
+    margin-right: 10px;
+    line-height: 45px;
+    font-weight: bold;
+    font-size: 16px;
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    text-align: center;
+    /* background-color: aquamarine; */
+    
+  }
+  .navright ul li a{
+      color: white;
+      text-decoration: none;
+  }
+  .borderbox{
+    border-bottom: 1px solid white;
+  }  
+.navtitle{
+  width: 80px;
+  height: 40px;
+  /* background-color: blue; */
+  font-weight: bold;
+  text-align: center;
+  margin-left: 50px;
+  line-height: 40px;
+  font-size: 18px;
+  color: white;
+  position: absolute;
+  top: 130px;
+}
+.positioning{
+  width: 80px;
+  height: 40px;
+  /* background-color: blue; */
+  font-weight: bold;
+  text-align: center;
+  margin-left: 50px;
+  line-height: 40px;
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  top: 180px;
+}
+
+.banner{
+  margin-top: 20px;
+  width: 100%;
+  height: 400px;
+  /* background-color: tomato; */
+  margin-bottom: 50px;
+}
+.auto{
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+  /* background-color: violet; */
+}
+.logintext{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  /* background-color: aqua; */
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+.loginfrom{
+  margin-top: 20px;
+  margin-left: 405px;
+width: 400px;
+height: 340px;
+/* background-color: blue; */
+}
+.loginname{
+  width: 150px;
+  line-height: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #979899;
+  margin-left: 80px;
+  margin-bottom: 5px;
+  /* background-color: aquamarine; */
+}
+.username{
+  width: 200px;
+  height: 20px;
+  margin-left: 80px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.submit{
+  margin-left: 80px;
+  width: 210px;
+  height: 35px;
+  background-color: orangered;
+  text-align: center;
+  line-height: 35px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.gologin{
+  width: 210px;
+  line-height: 30px;
+  /* background-color: aqua; */
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  margin-left: 80px;
+}
+.gologin a{
+  color: red;
+  text-decoration: none;
+}
+/* 底部 */
+.foot{
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background-color: black;
+}
+.footlogo{
+  position: absolute;
+  left: 200px;
+  width: 130px;
+    height: 80px;
+    /* background-color: rgb(8, 84, 84); */
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 80px;
+    /* margin-left: 30px; */
+    color: white;
+    float: left;
+}
+.nickname{
+  position: absolute;
+  top: 100px;
+  left: 190px;
+    width: 310px;
+    height:30px;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    /* background-color: aquamarine; */
+  }
+  .Companyaddress{
+    position: absolute;
+  top: 50px;
+  left: 600px;
+    width: 310px;
+    height:30px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    /* background-color: aquamarine; */
+  }
+  .Customerservicehotline{
+    position: absolute;
+    top: 100px;
+    left: 600px;
+    width: 310px;
+    height:30px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    /* background-color: aquamarine; */
+  }
+  .OfficialWeibo{
+    position: absolute;
+    top: 100px;
+    left: 1000px;
+    width: 310px;
+    height:30px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    /* background-color: aquamarine; */
+  }
+  .WeChatpublicaccount{
+    position: absolute;
+  top: 50px;
+  left: 1000px;
+    width: 310px;
+    height:30px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    /* background-color: aquamarine; */
+  }
+</style>
+</html>
